@@ -16,7 +16,7 @@
 	--blink-font-color: white;
 	/* practice mode */
 	--keyboard-display: block;  
-	--quest-frame-margin-size: 3.3vh;
+	--quest-frame-margin-size: 8vh;
 	--practice-mode-cursor-margin-size: 4vh;
 	--practice-mode-border-bottom-width: 0;
 	--practice-mode-border-bottom-style: solid;
