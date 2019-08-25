@@ -1,0 +1,155 @@
+@font-face {
+	font-family: 'TW-Kai';
+	src: url('./fonts/TW-Kai-98_1.ttf');
+}
+
+@font-face {
+	font-family: 'Noto Serif TC';
+	src: url('./fonts/NotoSerifTC-Medium.otf');
+}
+
+:root {
+	/* dark mode */
+	--bg-color: transparent;
+	--font-color: black;
+	--blink-bg-color: black;
+	--blink-font-color: white;
+	/* practice mode */
+	--keyboard-display: block;  
+	--quest-frame-margin-size: 3.3vh;
+	--practice-mode-cursor-margin-size: 4vh;
+	--practice-mode-border-bottom-width: 0;
+	--practice-mode-border-bottom-style: solid;
+	--practice-mode-button-content: '拆';
+}
+
+[data-theme="dark"] {
+	--bg-color: black;
+	--font-color: white;
+	--blink-bg-color: white;
+	--blink-font-color: black;
+}
+
+[practice-mode="decomposition"] {
+	--keyboard-display: none;
+	--quest-frame-margin-size: 10vh;
+	--practice-mode-cursor-margin-size: 10vh;
+	--practice-mode-border-bottom-width: 1px;
+	--practice-mode-border-bottom-style: solid;
+	--practice-mode-button-content: '鍵';
+}
+
+body {
+	background-color: var(--bg-color);
+	color: var(--font-color);
+}
+
+.quest-frame {
+	margin-top: var(--quest-frame-margin-size);
+	text-align: center;
+}
+
+.quest-frame__charactor {
+	display: inline-block;
+	border: 1px solid;
+	font-size: 172px;
+	padding: 0 30px;
+	font-family: 'Noto Serif TC';
+	background-color: var(--bg-color);
+	color: var(--font-color);
+}
+
+.decomposition-cursor {
+	text-align: center;
+	margin-top: var(--practice-mode-cursor-margin-size); 
+}
+
+.decomposition-cursor__charactor {
+	display: inline-block;
+	vertical-align: top;
+	height: 100px;
+	width: 100px;
+	line-height: 100px;
+	font-family: 'Noto Serif TC';
+	font-size: 56px;
+	margin: 0 4px;
+	color: var(--font-color);
+	background-color: var(--bg-color);
+	border-bottom-width: var(--practice-mode-border-bottom-width);
+	border-bottom-style: var(--practice-mode-border-bottom-style);
+}
+
+.decomposition-cursor__charactor--finished {
+	color: gray;
+}
+
+.decomposition-cursor__charactor--hint {
+	color: gray;
+	border-bottom-color: var(--font-color);	
+}
+
+.decomposition-cursor__charactor--blink {
+	background-color: var(--blink-bg-color);
+	color: var(--blink-font-color);
+}
+
+.keyboard {
+	margin: 5vh auto;
+	display: var(--keyboard-display);
+}
+
+[class^='keyboard__row-'] {
+	text-align: center;
+}
+
+[class^='keyboard__key-'] {
+	display: inline-block;
+	border: 2px outset black;
+	width: 60px;
+	height: 67.2px;
+	margin: 0 3px 6px 3px;
+	line-height: 67.2px;
+	font: 40px 'Noto Serif TC';
+	background-color: var(--bg-color);
+	color: var(--font-color);
+	/* border-color: var(--border-color); */
+}
+
+.keyboard__key-f, .keyboard__key-j {
+	text-decoration: underline;
+}
+
+.keyboard__key--blink {
+	/* box-shadow: inset 0 -4px 0 0 black; */
+	box-shadow: inset 0 0 8px 0;
+}
+
+.keyboard__key--activated {
+	background: gray;
+}
+
+.btn-darkmode--toggle {
+	display: inline-block;
+	position: fixed;
+	bottom: 10px;
+	left: 10px;
+	width: 30px;
+	height: 30px;
+	background: var(--bg-color);
+	color: var(--font-color);
+	border: 7px solid;
+	border-radius: 50%;
+}
+
+.btn-practice-mode--toggle {
+}
+
+.btn-practice-mode--toggle:after {
+	display: inline-block;
+	position: fixed;
+	bottom: 10px;
+	right: 10px;
+	font: 30px 'Noto Serif TC';
+	color: var(--font-color);
+	content: var(--practice-mode-button-content);
+}
