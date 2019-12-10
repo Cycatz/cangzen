@@ -1,11 +1,13 @@
 @font-face {
 	font-family: 'TW-Kai';
 	src: url('./fonts/TW-Kai-98_1.ttf');
+	font-display: fallback;
 }
 
 @font-face {
 	font-family: 'Noto Serif TC';
 	src: url('./fonts/NotoSerifTC-Medium.otf');
+	font-display: fallback;
 }
 
 :root {
