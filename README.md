@@ -1,4 +1,5 @@
 # 蒼蟬
+![Screenshot](./screenshot.png)
 
 ## 名稱由來
 
